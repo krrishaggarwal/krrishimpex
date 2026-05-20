@@ -1,0 +1,100 @@
+/*Infrastructure.css*/
+
+/* Infrastructure Content Sections */
+.infra-section {
+    padding: 20px 0;
+}
+
+/* Production Capacity Section */
+.capacity-section {
+    background: #f9f9f9;
+}
+
+.capacity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+.capacity-item {
+    text-align: center;
+    padding: 30px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+    transition: transform 0.3s, color 0.3s;
+    color: #ff1515;
+}
+
+/* Hover effect for card */
+.capacity-item:hover {
+    transform: translateY(-5px);
+    color: #0055aa; /* Changes text color */
+}
+
+/* Hover effect for React Icons */
+.capacity-item svg {
+    font-size: 50px;
+    transition: color 0.3s;
+}
+
+.capacity-item:hover svg {
+    color: #0055aa; /* Icon color on hover */
+}
+
+/* Hover effect for numbers */
+.capacity-number {
+    font-size: 36px;
+    font-weight: bold;
+    color: #ff1515;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+
+.capacity-item:hover .capacity-number {
+    color: #0055aa; /* Number color on hover */
+}
+
+/* Gallery Section */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    height: 250px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.gallery-item:hover img {
+    transform: scale(1.1); /* Zoom effect */
+}
+
+.gallery-caption {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 15px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-caption {
+    transform: translateY(0); /* Caption slides up */
+}

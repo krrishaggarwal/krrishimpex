@@ -1,0 +1,352 @@
+/* AboutUs.css */
+
+/* About Content Sections */
+.about-section {
+    padding: 60px 0;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.2rem;
+    color: #333;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 3px;
+    background: #ff1515;
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: #555;
+}
+
+.about-content p {
+    margin-bottom: 15px;
+}
+
+/* Directors Section */
+.directors {
+    background: #f9f9f9;
+    padding: 60px 0;
+}
+
+.director-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.director-card {
+    flex: 1;
+    min-width: 300px;
+    max-width: 450px;
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.director-card:hover {
+    transform: translateY(-5px);
+}
+
+.director-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 20px;
+    border: 3px solid #ff1515;
+}
+
+.director-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.director-card h3 {
+    color: #000;
+}
+.director-title {
+    color: #666;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.director-quote {
+    font-style: italic;
+    color: #555;
+    margin: 20px 0;
+}
+
+/* Vision & Mission */
+.vm-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.vm-card {
+    background: #f9f9f9;
+    padding: 40px 30px;
+    border-radius: 12px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.vm-card:hover {
+    background: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.vm-card h3 {
+    margin: 20px 0 15px;
+    color: #333;
+}
+
+.vm-card p {
+    color: #666;
+    line-height: 1.7;
+}
+
+/* Certifications */
+.certifications {
+    background: #f9f9f9;
+    padding: 60px 0;
+    text-align: center;
+}
+
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr) !important; 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.cert-card {
+    background: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+}
+
+.cert-card img {
+    height: 100px;
+    margin-bottom: 25px;
+    object-fit: contain;
+}
+
+.cert-card h3 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.cert-card p {
+    color: #666;
+    line-height: 1.6;
+}
+
+.certifications .btn {
+    margin-top: 30px;
+}
+
+/* Timeline Section */
+.timeline-section {
+    padding: 60px 0;
+    background: #f9f9f9;
+}
+
+.timeline-nav {
+    margin: 40px 0;
+    position: relative;
+}
+
+.timeline-nav::before {
+    content: '';
+    position: absolute;
+    height: 4px;
+    background: #e0e0e0;
+    top: 50%;
+    left: 0;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.timeline-nav ul {
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    position: relative;
+    z-index: 2;
+}
+
+.timeline-nav-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #fff;
+    border: 3px solid #e0e0e0;
+    color: #333;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.timeline-nav-btn:hover,
+.timeline-nav-btn:focus {
+    border-color: #ff1515;
+}
+
+.timeline-nav-btn.active {
+    background: #ff1515;
+    border-color: #ff1515;
+    color: #fff;
+}
+
+.timeline-content-container {
+    margin-top: 50px;
+    min-height: 300px;
+}
+
+.timeline-content-item {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.3s ease;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 800px;
+    margin: 0 auto;
+    flex-direction: row;
+}
+
+.timeline-content-item.active {
+    display: flex;
+    opacity: 1;
+}
+
+.timeline-content-year {
+    background: #ff1515;
+    color: #fff;
+    font-size: 28px;
+    font-weight: bold;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    flex-shrink: 0;
+}
+
+.timeline-content-body {
+    padding: 30px;
+    flex-grow: 1;
+}
+
+.timeline-content-body h3 {
+    margin-top: 0;
+    color: #ff1515;
+    font-size: 24px;
+}
+
+.timeline-content-body p {
+    color: #555;
+    line-height: 1.7;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .section-title {
+        font-size: 1.8rem;
+    }
+
+    .director-card {
+        min-width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .vm-card {
+        padding: 30px 20px;
+    }
+
+    .cert-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .cert-card {
+        padding: 25px;
+    }
+
+    .cert-card img {
+        height: 80px;
+    }
+
+    .timeline-nav ul {
+        overflow-x: auto;
+        padding-bottom: 15px;
+        justify-content: flex-start;
+    }
+
+    .timeline-nav-btn {
+        margin-right: 15px;
+        width: 50px;
+        height: 50px;
+        font-size: 12px;
+        flex-shrink: 0;
+    }
+
+    .timeline-content-item {
+        flex-direction: column;
+    }
+
+    .timeline-content-year {
+        width: 100%;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section-title {
+        font-size: 1.6rem;
+    }
+
+    .about-content {
+        font-size: 15px;
+    }
+
+    .vm-card {
+        min-width: 100%;
+    }
+}

@@ -1,0 +1,143 @@
+/*ContactUs.css*/
+
+/* Contact Section Styling */
+.contact-section {
+    padding: 40px 20px;
+    background: #f9f9f9;
+}
+
+/* Contact Container */
+.contact-container {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+/* Contact Boxes */
+.contact-box {
+    flex: 1;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Contact Method Styling */
+.contact-method {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    /* fix vertical alignment */
+    margin-bottom: 25px;
+    transition: color 0.3s;
+}
+
+.contact-method svg {
+    font-size: 28px;
+    color: #ff1515;
+    min-width: 30px;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.contact-method-content h4 {
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 600;
+}
+
+.contact-method-content p {
+    color: #666;
+    line-height: 1.5;
+    margin: 0;
+    /* remove extra spacing */
+}
+
+/* Contact Form */
+.contact-form .form-group {
+    margin-bottom: 20px;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+    font-weight: 500;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: #0055aa;
+    box-shadow: 0 0 5px rgba(0, 85, 170, 0.3);
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Map Section */
+.map-container {
+    height: 400px;
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+        /* center boxes */
+    }
+
+    .contact-box {
+        flex: unset;
+        /* don't auto expand */
+        max-width: 500px;
+        /* keep a nice readable width */
+        width: 100%;
+        margin: 10px auto;
+        /* center horizontally */
+    }
+}
+
+@media (max-width: 576px) {
+    .contact-box {
+        padding: 30px 20px;
+        max-width: 100%;
+        /* go full width on small phones */
+    }
+
+    .contact-method svg {
+        font-size: 24px;
+        min-width: 25px;
+    }
+}

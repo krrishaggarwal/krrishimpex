@@ -1,0 +1,80 @@
+/*ContactsManagement.css*/
+
+.contacts-container {
+  padding: 20px;
+}
+
+.contacts-title {
+  font-size: 24px;
+  font-weight: bold;
+  color: #0055aa;
+  margin-bottom: 16px;
+}
+
+.info-text {
+  color: #666;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.contacts-table {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  border-collapse: collapse;
+}
+
+.contacts-table th,
+.contacts-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #ddd;
+  text-align: left;
+}
+
+.contacts-table th {
+  background-color: #0055aa;
+  color: white;
+}
+
+.status-complete {
+  color: green;
+  font-weight: bold;
+}
+
+.status-incomplete {
+  color: red;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+}
+
+.btn {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  color: white;
+  transition: 0.2s;
+}
+
+.btn-warning {
+  background-color: #f59e0b;
+}
+
+.btn-warning:hover {
+  background-color: #d97706;
+}
+
+.btn-danger {
+  background-color: #ff1515;
+}
+
+.btn-danger:hover {
+  background-color: #e01414;
+}

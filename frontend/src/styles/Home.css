@@ -1,0 +1,331 @@
+/*Home.css*/
+
+/* ===== Banner Section ===== */
+.banner {
+  background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('../assets/home/banner.png') center/cover no-repeat;
+  color: #fff;
+  text-align: center;
+  padding: 120px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.banner h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  text-shadow: 0 5px 15px rgba(0, 0, 0, 0.6);
+  margin-bottom: 20px;
+  color: #fff;
+}
+
+.banner p {
+  font-size: 1.25rem;
+  max-width: 700px;
+  margin: 0 auto 30px;
+  color: #eee;
+}
+
+/* ===== About Section ===== */
+.about {
+  padding: 50px 0;
+}
+
+.about-content {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-text {
+  flex: 1;
+  min-width: 350px;
+}
+
+.about-image {
+  flex: 1;
+  min-width: 300px;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: transform 0.5s ease;
+}
+
+.about-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== Quality Section ===== */
+.quality {
+  padding: 80px 0;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.quality-cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.quality-card {
+  flex: 1;
+  min-width: 260px;
+  max-width: 300px;
+  background: rgba(255, 255, 255, 0.08);
+  padding: 40px 25px;
+  border-radius: 20px;
+  transition: transform 0.4s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.quality-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+.quality-card svg {
+  font-size: 3rem;
+  color: #ff3b3b;
+  margin-bottom: 20px;
+}
+
+.quality-card h3 {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+/* ===== Product Categories ===== */
+.categories {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.home-page .category-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 30px;
+}
+
+.home-page .category-card {
+  background: #fff;
+  border-radius: 20px;
+  text-align: center;
+  padding: 30px 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-page .category-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.home-page .category-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  border: 5px solid #eee;
+}
+
+.home-page .category-action {
+  display: flex;
+  justify-content: center;
+  margin-top: 34px;
+}
+
+/* ===== Scrolling Products ===== */
+.home-page .scrolling-cards-container {
+  overflow: hidden;
+  padding: 20px 0;
+}
+
+.home-page .scrolling-cards {
+  --scroll-gap: 25px;
+  display: flex;
+  width: max-content;
+  gap: var(--scroll-gap);
+  animation: scrollInfinite 50s linear infinite;
+  will-change: transform;
+}
+
+.home-page .testimonials .scrolling-cards {
+  --scroll-gap: 20px;
+  animation-duration: 56s;
+}
+
+.home-page .product-card {
+  flex: 0 0 260px;
+  background: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.home-page .product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+.home-page .product-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.home-page .product-info {
+  padding: 15px;
+  text-align: center;
+}
+
+.home-page .scrolling-cards-container h3 {
+  color: #000;
+}
+@keyframes scrollInfinite {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-50% - (var(--scroll-gap) / 2)));
+  }
+}
+
+/* ===== Testimonials ===== */
+.testimonials {
+  padding: 80px 0;
+  background: #f9f9f9;
+}
+
+.testimonial-card {
+  flex: 0 0 300px;
+  max-width: 300px;
+  background: #fff;
+  padding: 25px 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.testimonial-header {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.testimonial-avatar {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.testimonial-name {
+  font-weight: 600;
+  color: #111;
+}
+
+.testimonial-role {
+  font-size: 14px;
+  color: #666;
+}
+
+.testimonial-stars {
+  color: #ff3b3b;
+  margin-bottom: 10px;
+}
+
+.testimonial-text {
+  font-size: 15px;
+  color: #444;
+  line-height: 1.6;
+}
+
+/* ===== CTA Section ===== */
+.cta-section {
+  padding: 80px 20px;
+  background: #222;
+  color: #fff;
+  text-align: center;
+}
+
+.cta-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.cta-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-top: 30px;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 2px solid #fff;
+}
+
+.btn-outline:hover {
+  background: #fff;
+  color: #111;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 992px) {
+  .about-content {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .quality-cards,
+  .home-page .category-grid {
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner {
+    padding: 80px 20px;
+  }
+
+  .banner h1 {
+    font-size: 2.2rem;
+  }
+
+  .testimonial-card {
+    min-width: 260px;
+  }
+}
+
+@media (max-width: 480px) {
+
+  .btn,
+  .btn-outline {
+    padding: 10px 20px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .category-grid {
+    grid-template-columns: 1fr;
+  }
+}

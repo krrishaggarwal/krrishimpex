@@ -1,0 +1,93 @@
+/*AdminLogin.css*/
+
+/* Container */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: #f3f4f6;
+}
+
+/* Card */
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  background: #fff;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Icon */
+.admin-icon {
+  display: block;
+  font-size: 48px;     /* size of the icon */
+  color: #0055aa;      /* brand/admin color */
+  margin: 0 auto 15px; /* center align + spacing below */
+}
+
+.admin-icon :hover {
+  color: #ff1515;
+}
+
+/* Title */
+.login-title {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #0055aa;
+  margin-bottom: 20px;
+}
+
+.login-title:hover {
+  color: #ff1515;
+}
+
+/* Error message */
+.error-message {
+  color: #e01414;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Inputs */
+.login-input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+.login-input:focus {
+  border-color: #0055aa;
+  outline: none;
+  box-shadow: 0 0 5px rgba(0, 85, 170, 0.4);
+}
+
+/* Button */
+.login-button {
+  width: 100%;
+  background: #0055aa;
+  color: white;
+  font-weight: 600;
+  padding: 10px;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-button:hover {
+  background: #ff1515;
+}
