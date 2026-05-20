@@ -22,7 +22,7 @@ const ProductManagement = () => {
     setIsLoading(true);
     setError("");
     try {
-      const res = await adminFetch("/api/admin/products");
+      const res = await adminFetch("/admin/products");
       const data = await res.json();
       if (data.success) {
         setProducts(data.products);
@@ -67,7 +67,7 @@ const ProductManagement = () => {
       if (editingProduct) {
         // update
         const res = await adminFetch(
-          `/api/admin/products/${editingProduct.id}`,
+          `/admin/products/${editingProduct.id}`,
           { method: "PUT", body: formData }
         );
         const updated = await res.json();
@@ -83,7 +83,7 @@ const ProductManagement = () => {
         }
       } else {
         // add
-        const res = await adminFetch("/api/admin/products", {
+        const res = await adminFetch("/admin/products", {
           method: "POST",
           body: formData,
         });
@@ -116,7 +116,7 @@ const ProductManagement = () => {
     setIsLoading(true);
     setError("");
     try {
-      const res = await adminFetch(`/api/admin/products/${id}`, { method: "DELETE" });
+      const res = await adminFetch(`/admin/products/${id}`, { method: "DELETE" });
       const deleted = await res.json();
       if (deleted.success) {
         setProducts(products.filter((p) => p.id !== id));

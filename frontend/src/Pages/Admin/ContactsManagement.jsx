@@ -10,7 +10,7 @@ const ContactsManagement = () => {
   useEffect(() => {
     const fetchContacts = async () => {
       try {
-        const res = await adminFetch("/api/admin/contacts");
+        const res = await adminFetch("/admin/contacts");
         const { contacts } = await res.json(); // destructure
         setContacts(contacts);
       } catch (err) {
@@ -28,7 +28,7 @@ const ContactsManagement = () => {
     const newStatus = currentStatus === "pending" ? "completed" : "pending";
 
     try {
-      const res = await adminFetch(`/api/admin/contacts/${id}/status`, {
+      const res = await adminFetch(`/admin/contacts/${id}/status`, {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ status: newStatus }),
@@ -46,7 +46,7 @@ const ContactsManagement = () => {
   // Delete contact
   const deleteContact = async (id) => {
     try {
-      await adminFetch(`/api/admin/contacts/${id}`, { method: "DELETE" });
+      await adminFetch(`/admin/contacts/${id}`, { method: "DELETE" });
       setContacts(contacts.filter((c) => c.id !== id));
     } catch (err) {
       console.error("Error deleting contact:", err);

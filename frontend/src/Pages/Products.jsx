@@ -39,7 +39,7 @@ const Products = () => {
     async function loadProducts() {
       try {
         const response = await fetch(
-          apiUrl("/api/products")
+          apiUrl("/products")
         );
         if (!response.ok) throw new Error("Failed to load products");
 

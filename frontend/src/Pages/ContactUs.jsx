@@ -27,7 +27,7 @@ const ContactUs = () => {
         setIsLoading(true);
 
         try {
-            const res = await fetch(apiUrl("/api/contacts"), {
+            const res = await fetch(apiUrl("/contacts"), {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(formData),

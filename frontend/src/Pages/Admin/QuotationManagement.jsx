@@ -11,7 +11,7 @@ const QuotationManagement = () => {
   useEffect(() => {
     const fetchQuotations = async () => {
       try {
-        const res = await adminFetch("/api/admin/quotations");
+        const res = await adminFetch("/admin/quotations");
         const data = await res.json();
         setQuotations(data.quotations || []);
       } catch (err) {
@@ -28,7 +28,7 @@ const QuotationManagement = () => {
     const newStatus = currentStatus === "pending" ? "completed" : "pending";
     try {
       const res = await adminFetch(
-        `/api/admin/quotations/${id}/status`,
+        `/admin/quotations/${id}/status`,
         {
           method: "PUT",
           headers: { "Content-Type": "application/json" },
@@ -48,7 +48,7 @@ const QuotationManagement = () => {
   const deleteQuotation = async (id) => {
     try {
       await adminFetch(
-        `/api/admin/quotations/${id}`,
+        `/admin/quotations/${id}`,
         { method: "DELETE" }
       );
       setQuotations(quotations.filter((q) => q.id !== id));
