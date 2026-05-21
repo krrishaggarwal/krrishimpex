@@ -4,7 +4,7 @@ header {
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   width: 100%;
 }
 
@@ -76,7 +76,7 @@ header {
     box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
     transform: translateY(-150%);
     transition: transform 0.3s ease-in-out;
-    z-index: 99;
+    z-index: 909;
   }
 
   .nav-links.active {
