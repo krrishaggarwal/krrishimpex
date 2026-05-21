@@ -17,9 +17,11 @@ export const adminFetch = (path, options = {}) => {
   });
 };
 
+// ✅ Fix - uploads served directly, not through /api
 export const getAssetUrl = (path) => {
   if (!path) return "/images/no-image.png";
   if (path.startsWith("http")) return path;
+  if (path.startsWith("/uploads/")) return path;
   if (path.startsWith("/")) return `${API_BASE_URL}${path}`;
   return path;
 };

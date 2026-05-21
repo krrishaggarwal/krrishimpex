@@ -8,6 +8,7 @@ import Products from "./Pages/Products";
 import Certifications from "./Pages/Certifications";
 import Infrastructure from "./Pages/Infrastructure";
 import Contact from "./Pages/ContactUs";
+import ScrollToTop from "./Components/ScrollToTop";
 
 import AdminLogin from "./Pages/Admin/AdminLogin";
 import ContactsManagement from "./Pages/Admin/ContactsManagement";
@@ -42,6 +43,7 @@ const Layout = ({ children }) => {
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           {/* Public Pages */}
