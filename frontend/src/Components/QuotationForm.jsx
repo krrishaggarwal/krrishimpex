@@ -37,7 +37,7 @@ const QuotationForm = ({ productName, productImage, onClose }) => {
     e.preventDefault();
 
     try {
-      const res = await fetch(apiUrl("/api/quotes"), {
+      const res = await fetch(apiUrl("/quotes"), {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
