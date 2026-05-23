@@ -13,8 +13,11 @@ import mf4 from "../assets/Infrastructure/mf4.jpeg";
 
 import wh1 from "../assets/Infrastructure/wh1.jpg";
 import wh2 from "../assets/Infrastructure/wh2.jpg";
-import wh3 from "../assets/Infrastructure/wh3.jpg";
+import wh3 from "../assets/Infrastructure/wh3.jpeg";
 import wh4 from "../assets/Infrastructure/wh4.jpg";
+import wh5 from "../assets/Infrastructure/wh5.jpeg"
+
+import staff from "../assets/Infrastructure/staff.jpeg";
 
 import factorymaindoor from "../assets/Infrastructure/factorymaindoor.jpg";
 
@@ -30,6 +33,7 @@ const galleryData = [
     { src: office, caption: "Office" },
     { src: officegate, caption: "Office Entrance" },
     { src: productwall, caption: "Product Wall" },
+    { src: staff, caption: "Staff"},
     { src: mf1, caption: "Production Unit" },
     { src: mf2, caption: "Production Unit" },
     { src: mf3, caption: "Production Unit" },
@@ -38,6 +42,7 @@ const galleryData = [
     { src: wh2, caption: "WareHouse" },
     { src: wh3, caption: "WareHouse" },
     { src: wh4, caption: "WareHouse" },
+    { src: wh5, caption: "WareHouse" },
 ];
 
 
