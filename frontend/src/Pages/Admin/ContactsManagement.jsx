@@ -6,12 +6,11 @@ const ContactsManagement = () => {
   const [contacts, setContacts] = useState([]);
   const [loading, setLoading] = useState(true);
 
-  // Fetch contacts from backend
   useEffect(() => {
     const fetchContacts = async () => {
       try {
         const res = await adminFetch("/admin/contacts");
-        const { contacts } = await res.json(); // destructure
+        const { contacts } = await res.json();
         setContacts(contacts);
       } catch (err) {
         console.error("Error fetching contacts:", err);
@@ -19,14 +18,11 @@ const ContactsManagement = () => {
         setLoading(false);
       }
     };
-
     fetchContacts();
   }, []);
 
-  // Toggle Complete / Incomplete status
   const toggleStatus = async (id, currentStatus) => {
     const newStatus = currentStatus === "pending" ? "completed" : "pending";
-
     try {
       const res = await adminFetch(`/admin/contacts/${id}/status`, {
         method: "PUT",
@@ -34,17 +30,14 @@ const ContactsManagement = () => {
         body: JSON.stringify({ status: newStatus }),
       });
       const { contact } = await res.json();
-
-      setContacts(
-        contacts.map((c) => (c.id === id ? contact : c))
-      );
+      setContacts(contacts.map((c) => (c.id === id ? contact : c)));
     } catch (err) {
       console.error("Error updating status:", err);
     }
   };
 
-  // Delete contact
   const deleteContact = async (id) => {
+    if (!window.confirm("Delete this contact?")) return;
     try {
       await adminFetch(`/admin/contacts/${id}`, { method: "DELETE" });
       setContacts(contacts.filter((c) => c.id !== id));
@@ -53,7 +46,6 @@ const ContactsManagement = () => {
     }
   };
 
-  // Display mapping for frontend
   const displayStatus = (status) => (status === "completed" ? "Complete" : "Incomplete");
 
   return (
@@ -81,29 +73,22 @@ const ContactsManagement = () => {
             <tbody>
               {contacts.map((c) => (
                 <tr key={c.id}>
-                  <td>{c.name}</td>
-                  <td>{c.email}</td>
-                  <td>{c.phone}</td>
-                  <td>{c.subject}</td>
-                  <td>{c.message}</td>
+                  <td data-label="Name">{c.name}</td>
+                  <td data-label="Email">{c.email}</td>
+                  <td data-label="Phone">{c.phone}</td>
+                  <td data-label="Subject">{c.subject}</td>
+                  <td data-label="Message">{c.message}</td>
                   <td
-                    className={
-                      c.status === "completed" ? "status-complete" : "status-incomplete"
-                    }
+                    data-label="Status"
+                    className={c.status === "completed" ? "status-complete" : "status-incomplete"}
                   >
                     {displayStatus(c.status)}
                   </td>
-                  <td className="actions">
-                    <button
-                      onClick={() => toggleStatus(c.id, c.status)}
-                      className="btn btn-warning"
-                    >
+                  <td data-label="Action" className="actions">
+                    <button onClick={() => toggleStatus(c.id, c.status)} className="btn btn-warning">
                       Toggle
                     </button>
-                    <button
-                      onClick={() => deleteContact(c.id)}
-                      className="btn btn-danger"
-                    >
+                    <button onClick={() => deleteContact(c.id)} className="btn btn-danger">
                       Delete
                     </button>
                   </td>

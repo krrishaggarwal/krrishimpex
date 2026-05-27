@@ -5,8 +5,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background: #f3f4f6;
+  padding: 20px;
 }
 
 /* Card */
@@ -19,22 +20,27 @@
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
 }
 
+/* Logo */
+.login-logo {
+  display: block;
+  height: 60px;
+  width: auto;
+  margin: 0 auto 10px;
+  object-fit: contain;
+}
+
 /* Icon */
 .admin-icon {
   display: block;
-  font-size: 48px;     /* size of the icon */
-  color: #0055aa;      /* brand/admin color */
-  margin: 0 auto 15px; /* center align + spacing below */
-}
-
-.admin-icon :hover {
-  color: #ff1515;
+  font-size: 36px;
+  color: #0055aa;
+  margin: 0 auto 10px;
 }
 
 /* Title */
 .login-title {
   text-align: center;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: bold;
   color: #0055aa;
   margin-bottom: 20px;
@@ -67,6 +73,7 @@
   border-radius: 8px;
   font-size: 14px;
   transition: 0.3s;
+  box-sizing: border-box;
 }
 
 .login-input:focus {
@@ -90,4 +97,9 @@
 
 .login-button:hover {
   background: #ff1515;
+}
+
+.login-button:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
 }

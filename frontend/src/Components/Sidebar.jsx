@@ -1,12 +1,22 @@
 import React, { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import "../styles/Sidebar.css";
 
-const Sidebar = ({ newQuotations, newContacts }) => {
+const Sidebar = ({ newQuotations, newContacts, mobileOpen, onMobileClose }) => {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
+  const navigate = useNavigate();
+
+  const handleLogout = () => {
+    sessionStorage.removeItem("adminToken");
+    navigate("/admin");
+  };
+
+  const handleNavClick = () => {
+    if (onMobileClose) onMobileClose();
+  };
 
   return (
-    <aside className={`sidebar ${sidebarCollapsed ? "collapsed" : ""}`}>
+    <aside className={`sidebar ${sidebarCollapsed ? "collapsed" : ""} ${mobileOpen ? "mobile-open" : ""}`}>
 
       {/* Header */}
       <div className="sidebar-header">
@@ -14,13 +24,23 @@ const Sidebar = ({ newQuotations, newContacts }) => {
           {sidebarCollapsed ? "AP" : "Admin Panel"}
         </h2>
 
-        <button
-          className="sidebar-toggle"
-          onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
-          aria-label="Toggle sidebar"
-        >
-          {sidebarCollapsed ? "→" : "←"}
-        </button>
+        <div style={{ display: "flex", gap: "8px", alignItems: "center" }}>
+          <button
+            className="sidebar-toggle desktop-only"
+            onClick={() => setSidebarCollapsed(!sidebarCollapsed)}
+            aria-label="Toggle sidebar"
+          >
+            {sidebarCollapsed ? "→" : "←"}
+          </button>
+          {/* Mobile close button */}
+          <button
+            className="sidebar-toggle mobile-only"
+            onClick={onMobileClose}
+            aria-label="Close menu"
+          >
+            ✕
+          </button>
+        </div>
       </div>
 
       {/* Navigation */}
@@ -31,6 +51,7 @@ const Sidebar = ({ newQuotations, newContacts }) => {
           className={({ isActive }) =>
             isActive ? "sidebar-link active" : "sidebar-link"
           }
+          onClick={handleNavClick}
         >
           <span className="link-icon">📦</span>
           {!sidebarCollapsed && (
@@ -43,6 +64,7 @@ const Sidebar = ({ newQuotations, newContacts }) => {
           className={({ isActive }) =>
             isActive ? "sidebar-link active" : "sidebar-link"
           }
+          onClick={handleNavClick}
         >
           <span className="link-icon">📋</span>
 
@@ -65,6 +87,7 @@ const Sidebar = ({ newQuotations, newContacts }) => {
           className={({ isActive }) =>
             isActive ? "sidebar-link active" : "sidebar-link"
           }
+          onClick={handleNavClick}
         >
           <span className="link-icon">👥</span>
 
@@ -89,6 +112,9 @@ const Sidebar = ({ newQuotations, newContacts }) => {
         {!sidebarCollapsed && (
           <p className="user-info">Logged in as Admin</p>
         )}
+        <button className="logout-btn" onClick={handleLogout}>
+          {sidebarCollapsed ? "→" : "Logout"}
+        </button>
       </div>
 
     </aside>

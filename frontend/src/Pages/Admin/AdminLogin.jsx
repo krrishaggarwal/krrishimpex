@@ -3,6 +3,7 @@ import "../../styles/AdminLogin.css";
 import { MdAdminPanelSettings } from "react-icons/md";
 import { useNavigate } from "react-router-dom";
 import { apiUrl } from "../../utils/api";
+import logo from "../../assets/imgs/logo.png";
 
 const AdminLogin = () => {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -43,6 +44,7 @@ const AdminLogin = () => {
   return (
     <div className="login-container">
       <div className="login-card">
+        <img src={logo} alt="Krrish Ecoware Industries" className="login-logo" />
         <MdAdminPanelSettings className="admin-icon" />
         <h2 className="login-title">Admin Login</h2>
 
