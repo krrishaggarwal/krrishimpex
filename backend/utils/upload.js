@@ -4,7 +4,7 @@ const path = require('path');
 const fs = require('fs');
 
 // ensure uploads folder exists
-const uploadDir = path.join(process.cwd(), 'uploads');
+const uploadDir = path.join(__dirname, '..', 'uploads');
 if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir);
 
 // storage config

@@ -1,6 +1,7 @@
 // frontend/src/components/admin/ProductManagement.jsx
 import React, { useState, useEffect } from "react";
 import "../../styles/ProductManagement.css";
+import { downloadProductCatalogue } from "../../utils/catalogueDownload";
 import { adminFetch, getAssetUrl } from "../../utils/api";
 
 const ProductManagement = () => {
@@ -155,7 +156,19 @@ const ProductManagement = () => {
 
   return (
     <div className="pm-container">
-      <h2 className="pm-title">Product Management</h2>
+      <div className="pm-page-header">
+        <h2 className="pm-title">Product Management</h2>
+        <div className="pm-catalogue-tools">
+          <button
+            type="button"
+            className="pm-btn pm-btn-blue"
+            onClick={() => downloadProductCatalogue(products)}
+            disabled={isLoading || products.length === 0}
+          >
+            Download Complete Product Catalogue
+          </button>
+        </div>
+      </div>
 
       {error && (
         <div className="pm-error">

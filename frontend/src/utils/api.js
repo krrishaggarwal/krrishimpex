@@ -1,5 +1,6 @@
 const rawBaseUrl = process.env.REACT_APP_API_URL || "";
 export const API_BASE_URL = rawBaseUrl.replace(/\/$/, "");
+const ASSET_BASE_URL = API_BASE_URL.replace(/\/api$/, "");
 
 export const apiUrl = (path) => `${API_BASE_URL}${path}`;
 
@@ -21,7 +22,7 @@ export const adminFetch = (path, options = {}) => {
 export const getAssetUrl = (path) => {
   if (!path) return "/images/no-image.png";
   if (path.startsWith("http")) return path;
-  if (path.startsWith("/uploads/")) return path;
+  if (path.startsWith("/uploads/")) return `${ASSET_BASE_URL}${path}`;
   if (path.startsWith("/")) return `${API_BASE_URL}${path}`;
   return path;
 };

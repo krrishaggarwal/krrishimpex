@@ -3,6 +3,9 @@ const Product = require("../models/product");
 const fs = require("fs");
 const path = require("path");
 
+const getUploadPath = (imagePath) =>
+  path.join(__dirname, "..", imagePath.replace(/^\/+/, ""));
+
 // ✅ UNIVERSAL SIZE PARSER
 const parseSizes = (sizes) => {
   if (!sizes) return [];
@@ -65,7 +68,7 @@ exports.deleteProduct = async (req, res, next) => {
 
     // delete image file if exists
     if (product.image) {
-      const filePath = path.join(process.cwd(), product.image);
+      const filePath = getUploadPath(product.image);
       if (fs.existsSync(filePath)) fs.unlinkSync(filePath);
     }
 
@@ -87,7 +90,7 @@ exports.updateProduct = async (req, res, next) => {
 
     // Replace image if new uploaded
     if (req.file && product.image) {
-      const oldPath = path.join(process.cwd(), product.image);
+      const oldPath = getUploadPath(product.image);
       if (fs.existsSync(oldPath)) fs.unlinkSync(oldPath);
       product.image = `/uploads/${req.file.filename}`;
     }

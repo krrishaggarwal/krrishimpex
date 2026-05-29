@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import BackToTop from "../Components/BackToTop";
 import QuotationForm from "../Components/QuotationForm";
+import { downloadProductPamphlet } from "../utils/catalogueDownload";
 import { apiUrl, getAssetUrl } from "../utils/api";
 import "../styles/Products.css";
 
@@ -208,6 +209,12 @@ const Products = () => {
               <div className="cta">
                 <button className="btn-primary" onClick={() => setShowQuoteForm(true)}>
                   Request a Quote
+                </button>
+                <button
+                  className="btn-secondary"
+                  onClick={() => downloadProductPamphlet(selectedProduct)}
+                >
+                  Download Pamphlet
                 </button>
               </div>
             </div>
